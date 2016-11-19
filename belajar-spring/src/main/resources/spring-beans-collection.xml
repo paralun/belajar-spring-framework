@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="customerBean" class="com.paralun.app.collections.CustomerEx">
+        
+        <!-- java.util.List -->
+        <property name="list">
+            <list>
+                <value>1</value>
+               <ref bean="personBean" />
+               <bean id="personBean" class="com.paralun.app.collections.PersonEx">
+                    <property name="nama" value="Zulham Zamrun 1" />
+                    <property name="alamat" value="Bandung 1" />
+                    <property name="umur" value="23" />
+                </bean>
+            </list>
+        </property>
+        
+        <!-- java.util.Set -->
+        <property name="set">
+            <set>
+                <value>1</value>
+                <ref bean="personBean" />
+                <bean id="personBean" class="com.paralun.app.collections.PersonEx">
+                    <property name="nama" value="Zulham Zamrun 1" />
+                    <property name="alamat" value="Bandung 1" />
+                    <property name="umur" value="23" />
+                </bean>
+            </set>
+        </property>
+        
+        <!-- java.util.Map -->
+        <property name="map">
+            <map>
+                <entry key="key1" value="1" />
+                <entry key="key2" value-ref="personBean" />
+                <entry key="key3">
+                    <bean id="personBean" class="com.paralun.app.collections.PersonEx">
+                        <property name="nama" value="Zulham Zamrun 1" />
+                        <property name="alamat" value="Bandung 1" />
+                        <property name="umur" value="23" />
+                    </bean>
+                </entry>
+            </map>
+        </property>
+        
+        <!-- java.util.Properties -->
+        <property name="properties">
+            <props>
+                <prop key="admin">admin@nospam.com</prop>
+                <prop key="support">support@nospam.com</prop>
+            </props>
+        </property>
+        
+    </bean>
+    
+    <bean id="personBean" class="com.paralun.app.collections.PersonEx">
+        <property name="nama" value="Zulham Zamrun"/>
+        <property name="alamat" value="Bandung"/>
+        <property name="umur" value="28"/>
+    </bean>
+
+</beans>

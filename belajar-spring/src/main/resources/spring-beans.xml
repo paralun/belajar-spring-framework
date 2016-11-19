@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="helloBean" class="com.paralun.app.HelloWorld">
+        <property name="nama" value="James Kusmambang" />
+    </bean>
+    
+    <bean id="personBean" class="com.paralun.app.Person">
+        <property name="kode" value="P001" />
+        <property name="nama" value="Teh Gelas" />
+        <property name="alamat" value="Kota Bandung" />
+    </bean>
+
+</beans>

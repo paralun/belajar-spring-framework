@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    <bean id="beanHelper" class="com.paralun.app.di.SetterDIHelper">
+        <property name="setterDI" ref="beanSetterDI" />
+    </bean>
+    
+    <bean id="beanConstructorHelper" class="com.paralun.app.di.ConstructorDIHelper">
+        <constructor-arg>
+            <ref bean="beanConstructor" />
+        </constructor-arg>
+    </bean>
+    
+    <bean id="beanSetterDI" class="com.paralun.app.di.SetterDIImpl" />
+    <bean id="beanConstructor" class="com.paralun.app.di.ConstructorDIImpl" />
+    
+
+</beans>
