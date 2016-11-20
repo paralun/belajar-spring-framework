@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+    
+    
+    <bean id="factoryBeanUtil" class="com.paralun.app.factorybean.FactoryBean">
+        
+        <property name="lists">
+            <util:list list-class="java.util.ArrayList">
+                <value>Lima</value>
+                <value>Enam</value>
+                <value>Tujuh</value>
+            </util:list>
+        </property>
+        
+        <property name="sets">
+            <util:set set-class="java.util.HashSet">
+                <value>Hitam</value>
+                <value>Putih</value>
+                <value>Abu-Abu</value>
+            </util:set>
+        </property>
+        
+        <property name="maps">
+            <util:map map-class="java.util.HashMap">
+                <entry key="5" value="Lima" />
+                <entry key="6" value="Enam" />
+                <entry key="7" value="Tujuh" />
+            </util:map>
+        </property>
+        
+    </bean>
+    
+</beans>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+    
+    <bean id="factoryBean" class="com.paralun.app.factorybean.FactoryBean">
+        
+        <property name="lists">
+            <bean class="org.springframework.beans.factory.config.ListFactoryBean">
+                <property name="targetListClass">
+                    <value>java.util.ArrayList</value>
+                </property>
+                <property name="sourceList">
+                    <list>
+                        <value>Satu</value>
+                        <value>Dua</value>
+                        <value>Tiga</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+        
+        <property name="sets">
+            <bean class="org.springframework.beans.factory.config.SetFactoryBean">
+                <property name="targetSetClass">
+                    <value>java.util.HashSet</value>
+                </property>
+                <property name="sourceSet">
+                    <list>
+                        <value>Merah</value>
+                        <value>Kuning</value>
+                        <value>Hijau</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+        
+        <property name="maps">
+            <bean class="org.springframework.beans.factory.config.MapFactoryBean">
+                <property name="targetMapClass">
+                    <value>java.util.HashMap</value>
+                </property>
+                <property name="sourceMap">
+                    <map>
+                        <entry key="1" value="Satu" />
+                        <entry key="2" value="Dua" />
+                        <entry key="3" value="Tiga" />
+                    </map>
+                </property>
+            </bean>
+        </property>
+    </bean>
+    
+</beans>
