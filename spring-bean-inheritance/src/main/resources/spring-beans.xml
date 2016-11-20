@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+    
+    <bean id="baseResource" class="com.paralun.app.Database">
+        <property name="driver" value="mysql" />
+        <property name="url" value="latihan" />
+    </bean>
+    
+    <bean id="development" parent="baseResource">
+        <property name="username" value="development" />
+        <property name="password" value="development" />
+    </bean>
+    
+    <bean id="production" parent="baseResource">
+        <property name="username" value="production" />
+        <property name="password" value="production" />
+    </bean>
+
+</beans>
