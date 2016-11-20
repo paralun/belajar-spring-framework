@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+    
+    <bean id="person" class="com.paralun.app.Person">
+        <property name="name" value="James Kusmambang" />
+        <property name="address" value="Bandung" />
+        <property name="age" value="26" />
+    </bean>
+    
+    <bean id="customer" class="com.paralun.app.Customer">
+        
+        <!-- java.util.List -->
+        <property name="list">
+            <list>
+                <ref bean="person" />
+                <bean class="com.paralun.app.Person">
+                    <property name="name" value="Paralun" />
+                    <property name="address" value="Cianjur" />
+                    <property name="age" value="25" />
+                </bean>
+            </list>
+        </property>
+        
+        <!-- java.util.Set -->
+        <property name="set">
+            <set>
+                <ref bean="person" />
+                <bean class="com.paralun.app.Person">
+                    <property name="name" value="Paralun" />
+                    <property name="address" value="Cianjur" />
+                    <property name="age" value="25" />
+                </bean>
+            </set>
+        </property>
+        
+        <!-- java.util.Map -->
+        <property name="map">
+            <map>
+                <entry key="1" value-ref="person" />
+                <entry key="2">
+                    <bean class="com.paralun.app.Person">
+                        <property name="name" value="Paralun" />
+                        <property name="address" value="Cianjur" />
+                        <property name="age" value="25" />
+                    </bean>
+                </entry>
+            </map>
+        </property>
+        
+        <!-- java.util.Properties -->
+        <property name="properties">
+            <props>
+                <prop key="email">kusmambang@gmail.com</prop>
+                <prop key="status">active</prop>
+            </props>
+        </property>
+        
+    </bean>
+    
+</beans>
