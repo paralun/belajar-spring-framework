@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+    
+    <bean id="customer" class="com.paralun.app.Customer">
+        <property name="person">
+            <bean class="com.paralun.app.Person">
+                <property name="name" value="James Kusmambang" />
+                <property name="address" value="Bandung" />
+                <property name="age" value="26" />
+            </bean>
+        </property>
+    </bean>
+    
+    <!-- Menggunakan constructor
+    <bean id="customer" class="com.paralun.app.Customer">
+        <constructor-arg>
+            <bean class="com.paralun.app.Person">
+                <property name="name" value="James Kusmambang" />
+                <property name="address" value="Bandung" />
+                <property name="age" value="26" />
+            </bean>
+        </constructor-arg>
+    </bean> -->
+
+</beans>
