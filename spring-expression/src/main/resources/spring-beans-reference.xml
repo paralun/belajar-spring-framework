@@ -7,6 +7,19 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context-4.3.xsd">
     
-    <context:component-scan base-package="com.paralun.app.annotation" />
+    <context:component-scan base-package="com.paralun.app.reference" />
+    
+    <!--
+    <bean id="address" class="com.paralun.app.reference.Address2">
+        <property name="street" value="Jl. Bundaran" />
+        <property name="postcode" value="46467" />
+        <property name="country" value="Indonesia" />
+    </bean>
+    
+    <bean id="customer" class="com.paralun.app.reference.Customer2">
+        <property name="address" value="#{address}" />
+        <property name="country" value="#{address.country}" />
+        <property name="fullAddress" value="#{address.getFullAddress('Bambang')}" />
+    </bean> -->
 
 </beans>
