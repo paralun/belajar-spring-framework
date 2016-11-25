@@ -15,9 +15,14 @@
         <property name="harga" value="3000" />
     </bean>
     
-    <bean id="kategori" class="com.paralun.app.annotation.Kategori">
+    <bean id="kategori1" class="com.paralun.app.annotation.Kategori">
         <property name="kode" value="K001" />
         <property name="nama" value="Makanan" />
+    </bean>
+    
+    <bean id="kategori2" class="com.paralun.app.annotation.Kategori">
+        <property name="kode" value="K002" />
+        <property name="nama" value="Minuman" />
     </bean>
 
 </beans>

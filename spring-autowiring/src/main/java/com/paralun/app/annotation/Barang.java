@@ -6,13 +6,15 @@ package com.paralun.app.annotation;
 
 import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Barang {
     
     private String code;
     private String nama;
     
-    //@Autowired by field
+    @Autowired //by field
+    @Qualifier("kategori2")
     private Kategori kategori;
     private BigDecimal harga;
 
@@ -45,7 +47,7 @@ public class Barang {
         return kategori;
     }
 
-    @Autowired //@Autowired by setter method
+    //@Autowired by setter method
     public void setKategori(Kategori kategori) {
         this.kategori = kategori;
     }
