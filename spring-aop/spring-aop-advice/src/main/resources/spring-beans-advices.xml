@@ -11,6 +11,7 @@
     
     <bean id="beforeAdvice" class="com.paralun.app.BeforeAdvice" />
     <bean id="afterReturnAdvice" class="com.paralun.app.AfterReturningAdviceTest" />
+    <bean id="afterThrowingAdvice" class="com.paralun.app.AfterThrowingAdviceTest" />
     
     <bean id="customerServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="target" ref="customerService" />
@@ -26,6 +27,15 @@
         <property name="interceptorNames">
             <list>
                 <value>afterReturnAdvice</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="customerServiceProxy3" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="customerService" />
+        <property name="interceptorNames">
+            <list>
+                <value>afterThrowingAdvice</value>
             </list>
         </property>
     </bean>

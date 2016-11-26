@@ -32,4 +32,8 @@ public class CustomerService {
     public void printAlamat() {
         System.out.println("Customer Alamat : " + alamat);
     }
+
+    public void printThrowException() {
+        throw new IllegalArgumentException();
+    }
 }
