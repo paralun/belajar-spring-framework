@@ -36,6 +36,17 @@ public class MainApp {
         try {
             service3.printThrowException();
         }catch (Exception e){}
+        System.out.println("===================================");
+        
+        CustomerService service4 = (CustomerService) ctx.getBean("customerServiceProxy4");
+        System.out.println("*************************");
+        service4.printName();
+        System.out.println("*************************");
+        service4.printAlamat();
+        System.out.println("*************************");
+        try {
+            service4.printThrowException();
+        }catch (Exception e){}
     }
     
 }
