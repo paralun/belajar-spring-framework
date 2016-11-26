@@ -17,6 +17,14 @@ public class MainApp {
         System.out.println("*************************");
         service.printAlamat();
         System.out.println("*************************");
+        System.out.println("===================================");
+        
+        CustomerService service2 = (CustomerService) ctx.getBean("customerServiceProxy2");
+        System.out.println("*************************");
+        service2.printName();
+        System.out.println("*************************");
+        service2.printAlamat();
+        System.out.println("*************************");
     }
     
 }
