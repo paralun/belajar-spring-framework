@@ -16,6 +16,7 @@
         <property name="advice" ref="autoProxy" />
     </bean>
     
+    <!--
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames">
             <list>
@@ -27,6 +28,8 @@
                 <value>customerAdvisor</value>
             </list>
         </property>
-    </bean>
+    </bean> -->
+    
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
     
 </beans>
