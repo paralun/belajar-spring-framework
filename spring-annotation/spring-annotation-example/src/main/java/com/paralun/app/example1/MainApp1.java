@@ -11,8 +11,11 @@ public class MainApp1 {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig1.class);
-        CustomerBean cb = ctx.getBean(CustomerBean.class);
-        System.out.println("Hallo " + cb.getPersonBean().getNama());
+        //CustomerBean cb = ctx.getBean(CustomerBean.class);
+        //System.out.println("Hallo " + cb.getPersonBean().getNama());
+        TransaksiBean tb = ctx.getBean(TransaksiBean.class);
+        System.out.println("Hello " + tb.getPersonBean().getNama());
+        System.out.println("Hello " + tb.getCustomerBean().getPersonBean().getNama());
     }
     
 }

@@ -24,7 +24,12 @@ public class AppConfig1 {
     }
     
     @Bean
-    CustomerBean customerBean(@Qualifier("bean1") PersonBean personBean) {
+    public CustomerBean customerBean(@Qualifier("bean2") PersonBean personBean) {
         return new CustomerBean(personBean);
+    }
+    
+    @Bean
+    public TransaksiBean transaksiBean(@Qualifier("bean1") PersonBean personBean, CustomerBean customerBean) {
+        return new TransaksiBean(personBean, customerBean);
     }
 }
