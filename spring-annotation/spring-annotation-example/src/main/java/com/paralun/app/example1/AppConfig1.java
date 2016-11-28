@@ -4,6 +4,7 @@
  */
 package com.paralun.app.example1;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -11,19 +12,19 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class AppConfig1 {
     
-    @Bean
+    @Bean(name = "bean1")
     public PersonBean personBean1() {
         return new PersonBean("James");
     }
     
-    @Bean
-    @Primary
+    @Bean(name = "bean2")
+    //@Primary
     public PersonBean personBean2() {
         return new PersonBean("Kusmambang");
     }
     
     @Bean
-    CustomerBean customerBean (PersonBean personBean) {
+    CustomerBean customerBean(@Qualifier("bean1") PersonBean personBean) {
         return new CustomerBean(personBean);
     }
 }
