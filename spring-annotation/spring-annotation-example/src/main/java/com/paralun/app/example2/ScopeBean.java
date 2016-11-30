@@ -4,9 +4,14 @@
  */
 package com.paralun.app.example2;
 
-public class ScopeBean {
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class ScopeBean implements ApplicationContextAware {
     
     private String value;
+    private ApplicationContext context;
 
     public ScopeBean(String value) {
         this.value = value;
@@ -18,5 +23,18 @@ public class ScopeBean {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext context) throws BeansException {
+        this.context = context;
+    }
+    
+    public void testContex() {
+        if(context != null) {
+            System.out.println("Context ada");
+        }else{
+            System.out.println("Context tidak ada");
+        }
     }
 }

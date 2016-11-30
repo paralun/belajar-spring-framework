@@ -21,6 +21,7 @@ public class ScopeMain {
         
         ScopeBean scope3 = ctx.getBean("bean1", ScopeBean.class);
         System.out.println(scope3.getValue());
+        scope3.testContex();
     }
     
 }
