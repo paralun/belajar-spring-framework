@@ -1,0 +1,17 @@
+The resource paths in application context constructor values may be a simple 
+path (as shown above) which has a one-to-one mapping to a target Resource, 
+or alternately may contain the special "classpath*:" prefix and/or internal 
+Ant-style regular expressions (matched using Spring’s PathMatcher utility). 
+Both of the latter are effectively wildcards
+
+One use for this mechanism is when doing component-style application assembly. 
+All components can 'publish' context definition fragments to a well-known 
+location path, and when the final application context is created using the 
+same path prefixed via classpath*:, all component fragments will be picked up 
+automatically.
+
+Note that this wildcarding is specific to use of resource paths in application 
+context constructors (or when using the PathMatcher utility class hierarchy 
+directly), and is resolved at construction time. It has nothing to do with 
+the Resource type itself. It’s not possible to use the classpath*: prefix to 
+construct an actual Resource, as a resource points to just one resource at a time.
