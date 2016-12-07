@@ -26,7 +26,7 @@ public class BarangDaoImpl extends AbstractDao implements BarangDao {
 
     @Override
     public void delete(long id) {
-        Query query = getSession().createQuery("delete from t_barang where id = :id");
+        Query query = getSession().createQuery("delete from Barang where id = :id");
         query.setLong("id", id);
         query.executeUpdate();
     }
